@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-color-primary-dark: 29, 30, 53;
+  --font-color-primary-soft: 244, 124, 87;
+  --font-color-neutral-very-dark: 74, 75, 94;
+  --font-color-neutral-dark: 120, 120, 135;
+
+  --primary-color: 175, 103, 233;
+  --secondary-color: 101, 101, 231;
+
+  --divide-color: 231, 231, 233;
+
+  --font-size: 12px;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Kumbh Sans', sans-serif;
+  color: rgb(var(--font-color-primary-dark));
+  font-size: var(--font-size);
+  background: linear-gradient(rgb(var(--primary-color)), rgb(var(--secondary-color)));
+}
