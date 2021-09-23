@@ -30,8 +30,8 @@ for (let question of questions) {
       questionsOpenedCnt++;
       questionsOpened.push(answerIndex);
       console.log('LOL', questionsOpenedCnt, questionsOpened);
-      // if more than 3 questions opened, close the first one opened because there is not enough space to open all answers
-      if (questionsOpenedCnt > 3) {
+      // if more than n questions opened, close the first one opened because there is not enough space to open all answers
+      if (questionsOpenedCnt > 2) {
         firstAnswerOpenedIndex = questionsOpened.shift();
         questionsOpenedCnt--;
         answers[firstAnswerOpenedIndex].classList.remove('opened');
