@@ -5,6 +5,17 @@
 }
 
 :root {
+  /* 
+  rgb(29, 30, 53)
+  rgb(244, 124, 87)
+  rgb(74, 75, 94)
+  rgb(120, 120, 135)
+
+  rgb(175, 103, 233)
+  rgb(101, 101, 231)
+  
+  rgb(231, 231, 233)
+  */
   --font-color-primary-dark: 29, 30, 53;
   --font-color-primary-soft: 244, 124, 87;
   --font-color-neutral-very-dark: 74, 75, 94;
@@ -24,4 +35,70 @@ body {
   color: rgb(var(--font-color-primary-dark));
   font-size: var(--font-size);
   background: linear-gradient(rgb(var(--primary-color)), rgb(var(--secondary-color)));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 12px 22px 1px rgba(0, 0, 0, .2);
+}
+
+.container__image {
+  display: inline-block;
+  width: 49.8%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.container__platform,
+.container__platform-shadow,
+.container__box {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container__platform {
+  background-image: url(images/illustration-woman-online-desktop.svg);
+  width: 100%;
+  height: 100%;
+  transform: translateX(-15%);
+}
+
+.container__platform-shadow {
+  background-image: url(images/bg-pattern-desktop.svg);
+  width: 100%;
+  height: 100%;
+  transform: translate(-65%,-10%) scale(2);
+}
+
+.container__box {
+  background-image: url(images/illustration-box-desktop.svg);
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -20%);
+}
+
+.container__questions {
+  display: inline-block;
+  width: 49.8%;
+  height: 100%;
+}
+
+.attribution {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50px);
 }
