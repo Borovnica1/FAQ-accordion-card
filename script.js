@@ -3,8 +3,6 @@ const answers = document.querySelectorAll('.container__answer ');
 const questionsOpened = []
 let questionsOpenedCnt = 0
 
-console.log('idemo', questions);
-console.log('Dxss', answers, answers[1]);
 
 for (let question of questions) {
   question.addEventListener('click', function() {
@@ -29,7 +27,7 @@ for (let question of questions) {
       questionTitle.style.fontWeight = '700';
       questionsOpenedCnt++;
       questionsOpened.push(answerIndex);
-      console.log('LOL', questionsOpenedCnt, questionsOpened);
+
       // if more than n questions opened, close the first one opened because there is not enough space to open all answers
       if (questionsOpenedCnt > 2) {
         firstAnswerOpenedIndex = questionsOpened.shift();
