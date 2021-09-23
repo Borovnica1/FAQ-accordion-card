@@ -5,6 +5,17 @@
 }
 
 :root {
+  /* 
+  rgb(29, 30, 53)
+  rgb(244, 124, 87)
+  rgb(74, 75, 94)
+  rgb(120, 120, 135)
+
+  rgb(175, 103, 233)
+  rgb(101, 101, 231)
+  
+  rgb(231, 231, 233)
+  */
   --font-color-primary-dark: 29, 30, 53;
   --font-color-primary-soft: 244, 124, 87;
   --font-color-neutral-very-dark: 74, 75, 94;
@@ -23,5 +34,216 @@ body {
   font-family: 'Kumbh Sans', sans-serif;
   color: rgb(var(--font-color-primary-dark));
   font-size: var(--font-size);
-  background: linear-gradient(rgb(var(--primary-color)), rgb(var(--secondary-color)));
+  background: linear-gradient(to bottom,rgb(var(--primary-color)), 80%, rgb(var(--secondary-color)));
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: rgb(var(--font-color-primary-dark));
+}
+
+.container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 12px 22px 1px rgba(0, 0, 0, .2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;
+  user-select: none;
+  margin: 100px auto 0 auto;
+}
+
+.container__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.container__platform,
+.container__platform-shadow,
+.container__box {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container__platform {
+  background-image: url(images/illustration-woman-online-desktop.svg);
+  width: 100%;
+  height: 100%;
+  transform: translateX(-15%);
+}
+
+.container__platform-shadow {
+  background-image: url(images/bg-pattern-desktop.svg);
+  width: 100%;
+  height: 100%;
+  transform: translate(-65%,-10%) scale(2);
+}
+
+.container__box {
+  background-image: url(images/illustration-box-desktop.svg);
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -20%);
+}
+
+.container__questions {
+  padding: 10% 30% 10% 0;
+}
+
+.container__qa-block h4 {
+  font-weight: 400;
+  color: rgb(var(--font-color-neutral-very-dark));
+}
+
+.container__question-and-arrow {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+.container__question-and-arrow:hover h4 {
+  color: rgb(var(--font-color-primary-soft));
+}
+
+.container__question-and-arrow img {
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.container__answer {
+  margin-top: 5px;
+  overflow: hidden;
+  max-height: 0;
+  transition: all .2s ease-out;
+}
+
+/* This max-height is hard coded. It works. But if paragraphs were different sizes by a large margin we should than find the exect height via JavaScript and inject it as max-height with JavaScript */
+.opened {
+  max-height: 50px;
+}
+
+.attribution {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 700px;
+  }
+
+  .container__box {
+    width: 160px;
+    height: 160px;
+    transform: translate(-50%, -40%);
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 500px;
+    height: 400px;
+  }
+
+  .container__questions {
+    padding: 5% 15% 5% 0;
+  }
+
+  .container__box {
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -40%);
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .container__question-and-arrow {
+    padding: .6rem 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: 400px;
+    height: 500px;
+    margin: 60px auto 0 auto;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 300px;
+    height: 520px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 80%;
+    margin: 120px auto 0 auto;
+  }
+
+  .container__image {
+    overflow: initial;
+  }
+
+  .container__box {
+    display: none;
+  }
+
+  .container__platform {
+    background-image: url(images/illustration-woman-online-mobile.svg);
+    width: 90%;
+    height: 90%;
+    transform: translate(0%, -50%) scale(1.6);
+  }
+  
+  .container__platform-shadow {
+    background-image: url(images/bg-pattern-mobile.svg);
+    width: 100%;
+    height: 100%;
+    transform: translate(0%, 0%) scale(.8);
+  }
+
+  .attribution {
+    bottom: -40px;
+  }
+  .container__questions {
+    padding: 0% 10%;
+  }
+  .container__question-and-arrow {
+    padding: .8rem 0;
+  }
+  .container__questions h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: 270px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20% 80%;
+    margin: 120px auto 0 auto;
+  }
 }
